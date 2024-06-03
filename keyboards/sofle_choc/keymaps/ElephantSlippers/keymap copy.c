@@ -52,9 +52,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 
 [_QWERTY] = LAYOUT( \
-  TD(TD_ESC_CAPS),KC_1,   KC_2,    KC_3,    KC_4,    KC_5,                     KC_6,    KC_7,    KC_8,    KC_9,    KC_0, KC_BSLS, \
-  KC_TAB,         KC_Q,   KC_W,    KC_E,    KC_R,    KC_T,                     KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,   KC_BSPC, \
-  KC_GRV,         KC_A,   KC_S,    KC_D,    KC_F,    KC_G,                     KC_H,    KC_J,    KC_K,    KC_L, KC_SCLN,  KC_QUOT, \
+  KC_GRV,         KC_1,   KC_2,    KC_3,    KC_4,    KC_5,                     KC_6,    KC_7,    KC_8,    KC_9,    KC_0, KC_BSLS, \
+  TD(TD_ESC_CAPS),KC_Q,   KC_W,    KC_E,    KC_R,    KC_T,                     KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,   KC_BSPC, \
+  KC_TAB,         KC_A,   KC_S,    KC_D,    KC_F,    KC_G,                     KC_H,    KC_J,    KC_K,    KC_L, KC_SCLN,  KC_QUOT, \
   KC_LSFT,        KC_Z,   KC_X,    KC_C,    KC_V,    KC_B, KC_MUTE, KC_MUTE, KC_N,    KC_M, KC_COMM,  KC_DOT, KC_SLSH,  KC_RSFT, \
             KC_LGUI,KC_LALT,KC_LCTRL, KC_LOWER, KC_SPC,                      KC_ENT, KC_RAISE, KC_RCTRL, KC_RALT, KC_RGUI \
 ),
@@ -459,7 +459,7 @@ void rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
     if (host_keyboard_led_state().caps_lock) {
         for (uint8_t i = led_min; i <= led_max; i++) {
             if (g_led_config.flags[i] & LED_FLAG_ALL) {
-                rgb_matrix_set_color(28, RGB_RED); // Full Brightness
+                rgb_matrix_set_color(27, RGB_RED); // Full Brightness
                // rgb_matrix_set_color(i, 0xD9, 0x00, 0x00); // Full Brightness RED
                // rgb_matrix_sethsv_noeeprom(HSV_RED); Didn't work
                // rgb_matrix_sethsv_noeeprom(250, 250, 80); // Doesnt work with animations; does not reset
